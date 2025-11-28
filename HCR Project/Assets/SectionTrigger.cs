@@ -4,12 +4,6 @@ public class SectionTrigger : MonoBehaviour
 {
     public GameObject roadSection;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -20,7 +14,10 @@ public class SectionTrigger : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Trigger"))
         {
-            Instantiate(roadSection, new Vector3(0, 2, -6), Quaternion.identity);
+            other.gameObject.SetActive(false);
+            Debug.Log(other.gameObject.name);
+            Instantiate(roadSection, new Vector3(-6.06f, 2, -13), Quaternion.identity);
+            return;
         }
     }
 

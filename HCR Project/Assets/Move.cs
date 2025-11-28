@@ -2,16 +2,16 @@ using UnityEngine;
 
 public class Move : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private movementcontrols playerMovement;
+    void Awake()
     {
-        
+        playerMovement = GameObject.FindFirstObjectByType<movementcontrols>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position += new Vector3(0, 0, 4) * Time.deltaTime;
+        transform.position += new Vector3(0, 0, playerMovement.forwardSpeed) * Time.deltaTime;
     }
 
 
